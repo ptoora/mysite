@@ -6,7 +6,7 @@ const LAYOUT_TITLE = 'Parsh\'s Testing Strategy Wiki'
 /* GET home page. */
 router.get('/', function(req, res, next) {
  
-  res.render('index', { title: LAYOUT_TITLE});
+  res.render('index', {  layoutTitle: LAYOUT_TITLE});
 
 });
 
