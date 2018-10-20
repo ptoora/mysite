@@ -1,0 +1,132 @@
+What is behaviour?
+Behaviour is what the business wants to achieve from the story, largely independent of the technology used to implement that behaviour.
+
+
+
+Why do we need to define it up-front?
+The expression of behaviour should be defined enough such that the Story is:
+
+playable... no ambiguity and well defined scope
+deliverable by Devs... clear context, action, result, particularly for behaviour
+testable... can verify results
+estimate'able
+
+
+What is Gherkin format?
+The Gherkin style supports this well.
+
+Defining the persona and business imperative for the feature → FEATURE (As a ... I want to ... so that I can ...)
+Defining the scope and use case →                                                SCENARIO
+Defining the context/opening state →                                                  GIVEN
+Defining the action to initiate the behaviour →                                     WHEN
+Defining the expected result/end state of the action →                        THEN
+Cucumber is a great example of a tool that implements this BDD.
+
+What is the difference between behavioural and non-behavioural?
+
+e.g. Feature: As a customer I want to be the only person who can access my account so that my information is secure
+
+         Scenario: Logging in with an invalid password
+      
+           Non-behavioural:
+
+              Given I have the login page
+              When I enter a valid username into the username box
+              And I enter an invalid password into the password box
+              And I click the login button
+              Then I will see the error message 'Invalid password'
+
+           Behavioural:
+     
+              Given I want to login to another's account
+              When I login in with an valid username and invalid password
+              Then I will not be able to access that account
+              And I will see an error
+
+
+e.g. Feature: As a Content Creator UI I want to be able to add an article to CT so that they can be published to the world
+
+        Scenario: Successfully adding an article via an API
+
+           Non-behavioural:
+
+             Given I have an article payload
+             When I call the POST method on the URL for adding articles with headers
+             Then I get a 201 response
+
+           Behavioural:
+
+             Given I have drafted an article
+             When I call the API to add the article
+             And I call the API to get the article
+             Then it will be returned as it was entered
+             And consumers are informed via the response code of a successful addition (201,200)
+
+
+Benefits of taking the behavioural approach:
+It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)
+The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.
+
+
+Is Behaviour always agnostic of the implementation?
+Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.
+
+eg. A check button to chose if you accept cookies, or where the specific http response code is mandated, or where the copy is a legal requirement
+
+
+
+Advanced Gherkin
+
+
+Gherkin style offers a great approach to writing; structured, comprehensive, and well scoped acceptance criteria.  However the approach has issues:
+
+Conflates the client with the system (domain) state
+Conflates the action with the data scenario
+
+
+An extension on this would be to take a more explicit approach as follows:
+
+GIVEN:
+
+client state
+system state
+WHEN:
+
+client performs an action
+with an input data case
+THEN:
+
+the system does something useful
+and the client responds nicely
+
+
+E.g. An invalid front-end login
+GIVEN:
+
+I am not logged in
+And there is an account
+WHEN:
+
+I click login
+With an invalid password
+THEN:
+
+The system checks and determines the password is invalid
+And displays 'Doh!' with a 😪
+
+
+E.g. an API call
+GIVEN:
+
+I have an API key
+And no account exists
+WHEN:
+
+I call the POST method
+With a valid account
+THEN:
+
+The system checks if the account exists, and if not, saves it with a unique ID
+And returns a 201 status with a resource ID and a 😊 body
+This approach offers; more clarity, makes it easier to express in Gherkin, and generates more scenarios.
+
