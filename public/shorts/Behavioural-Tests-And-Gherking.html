@@ -3,33 +3,36 @@
 <head>
   <link rel="stylesheet" href="../stylesheets/style.css">
   <a href="../">Home</a><br>
-  <a href="../shorts">Shorts</a>
+  <a href="../shorts">Bite Size Blogs</a>
 </head>
 <body>
 
 <div>
-        <h1>What is behaviour?</h1>
+        <h3>What is behaviour?</h3>
         <div>Behaviour is what the business wants to achieve from the story, largely independent of the technology used to implement that behaviour.</div>
-        <br /><br /><br />
-        <div>Why do we need to define it up-front?</div>
+      <br>
         <div>The expression of behaviour should be defined enough such that the Story is:</div>
-        <br />
-        <div>playable... no ambiguity and well defined scope</div>
-        <div>deliverable by Devs... clear context, action, result, particularly for behaviour</div>
-        <div>testable... can verify results</div>
-        <div>estimate'able</div>
-        <br /><br />
-        <div>What is Gherkin format?</div>
-        <div>The Gherkin style supports this well.</div>
-        <br />
-        <div>Defining the persona and business imperative for the feature &rarr; FEATURE (As a ... I want to ... so that I can ...)</div>
-        <div>Defining the scope and use case &rarr; SCENARIO</div>
-        <div>Defining the context/opening state &rarr; GIVEN</div>
-        <div>Defining the action to initiate the behaviour &rarr; WHEN</div>
-        <div>Defining the expected result/end state of the action &rarr; THEN</div>
+        <ul>
+        <li>playable... no ambiguity and well defined scope</li>
+        <li>deliverable by Devs... clear context, action, result, particularly for behaviour</li>
+        <li>testable... can verify results</li>
+        <li>estimate'able</li>
+        </ul>
+
+        <h3>What is Gherkin format?</h3>
+        <div class="tab">
+        <div>Defining the persona and business imperative for the feature &rarr; <b>FEATURE</b>(As a ... I want to ... so that I can ...)</div>
+        <div>Defining the scope and use case &rarr; <b>SCENARIO</b></div>
+        <div>Defining the context/opening state &rarr; <b>GIVEN</b></div>
+        <div>Defining the action to initiate the behaviour &rarr; <b>WHEN</b></div>
+        <div>Defining the expected result/end state of the action &rarr; <b>THEN</b></div>
+        </div>
+
+
+        <br>
         <div>Cucumber is a great example of a tool that implements this BDD.</div>
         <br />
-        <div>What is the difference between behavioural and non-behavioural?</div>
+        <h3>What is the difference between behavioural and non-behavioural?</h3>
         <br />
         <div>e.g. Feature: As a customer I want to be the only person who can access my account so that my information is secure</div>
         <br />
@@ -37,71 +40,76 @@
         <div>&nbsp;</div>
         <div>Non-behavioural:</div>
         <br />
-        <div>Given I have the login page</div>
+        <div class="tab">
+        <div >Given I have the login page</div>
         <div>When I enter a valid username into the username box</div>
         <div>And I enter an invalid password into the password box</div>
         <div>And I click the login button</div>
         <div>Then I will see the error message 'Invalid password'</div>
+        </div>
         <br />
         <div>Behavioural:</div>
-        <div>&nbsp;</div>
+        <div class="tab">
         <div>Given I want to login to another's account</div>
         <div>When I login in with an valid username and invalid password</div>
         <div>Then I will not be able to access that account</div>
         <div>And I will see an error</div>
-        <br /><br />
+      </div>
         <div>e.g. Feature: As a Content Creator UI I want to be able to add an article to CT so that they can be published to the world</div>
         <br />
         <div>Scenario: Successfully adding an article via an API</div>
         <br />
         <div>Non-behavioural:</div>
-        <br />
+        <div class="tab">
         <div>Given I have an article payload</div>
         <div>When I call the POST method on the URL for adding articles with headers</div>
         <div>Then I get a 201 response</div>
-        <br />
+      </div>
         <div>Behavioural:</div>
-        <br />
+        <div class="tab">
         <div>Given I have drafted an article</div>
         <div>When I call the API to add the article</div>
         <div>And I call the API to get the article</div>
         <div>Then it will be returned as it was entered</div>
         <div>And consumers are informed via the response code of a successful addition (201,200)</div>
-        <br /><br />
+      </div>
+
+      <br><br>
         <div>Benefits of taking the behavioural approach:</div>
-        <div>It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)</div>
-        <div>The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</div>
-        <br /><br />
-        <div>Is Behaviour always agnostic of the implementation?</div>
-        <div>Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.</div>
-        <br />
+        <ul>
+        <li>It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)</li>
+        <li>The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</li>
+        <li>Is Behaviour always agnostic of the implementation? Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.</li>
+        </ul>
         <div>eg. A check button to chose if you accept cookies, or where the specific http response code is mandated, or where the copy is a legal requirement</div>
-        <br /><br /><br />
-        <div>Advanced Gherkin</div>
-        <br /><br />
+      
+        <h3>Advanced Gherkin</h3>
+      
         <div>Gherkin style offers a great approach to writing; structured, comprehensive, and well scoped acceptance criteria. However the approach has issues:</div>
-        <br />
-        <div>Conflates the client with the system (domain) state</div>
-        <div>Conflates the action with the data scenario</div>
-        <br /><br />
+        <ul>
+        <li>Conflates the client with the system (domain) state</li>
+        <li>Conflates the action with the data scenario</li>
+        </ul>
         <div>An extension on this would be to take a more explicit approach as follows:</div>
         <br />
+        <div class="tab">
         <div>GIVEN:</div>
-        <br />
         <div>client state</div>
         <div>system state</div>
+        <br>
         <div>WHEN:</div>
-        <br />
+  
         <div>client performs an action</div>
         <div>with an input data case</div>
-        <div>THEN:</div>
         <br />
+        <div>THEN:</div>
+    
         <div>the system does something useful</div>
         <div>and the client responds nicely</div>
         <br /><br />
         <div>E.g. An invalid front-end login</div>
         <div>GIVEN:</div>
-        <br />
+      
         <div>I am not logged in</div>
         <div>And there is an account</div>
         <div>WHEN:</div>
@@ -109,25 +117,29 @@
         <div>I click login</div>
         <div>With an invalid password</div>
         <div>THEN:</div>
-        <br />
+      
         <div>The system checks and determines the password is invalid</div>
         <div>And displays 'Doh!' with a 😪</div>
         <br /><br />
         <div>E.g. an API call</div>
         <div>GIVEN:</div>
-        <br />
+       
         <div>I have an API key</div>
         <div>And no account exists</div>
-        <div>WHEN:</div>
         <br />
+        <div>WHEN:</div>
+    
         <div>I call the POST method</div>
         <div>With a valid account</div>
-        <div>THEN:</div>
         <br />
+        <div>THEN:</div>
+       
         <div>The system checks if the account exists, and if not, saves it with a unique ID</div>
         <div>And returns a 201 status with a resource ID and a 😊 body</div>
+        <br>
         <div>This approach offers; more clarity, makes it easier to express in Gherkin, and generates more scenarios.</div>
         </div>
+        </div>>
 
 </body>
 </html>
