@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <a href="../">Home</a><br>
+  <a href="../shorts">Bite Size Blogs</a>
+</head>
+<body>
+
+<h1> Model Based Testing </h1>
+
+Your state model represents a set of transitions taking the domain from one state to another. 
+Tradidional approaches for drawing out test cases center on happy and sad path behaviour. 
+<br>
+We can use model based testing to identify additional test cases that are more likely to manifest bugs because it's a more complex aspect of the application. 
+<br>
+Model based testing validates that our application honours the  state model. In order to do this we need to carefully understand the various states, which may not be explicitly described anywhere. 
+
+<h3>My approach is to draw out these test cases by:</h2>
+<ul>
+    <li>Identify the states </li>
+    <li>Identify the input actions</li>
+    <li>Combine the two to form tests</li>
+  </ul>
+
+<h3> Here's a simple example of a login model. There are four states:</h3>
+<ul>
+  <li> Logged in </li>
+  <li> Logged in</li>
+  <li>First time logged in</li>
+  <li> Expired login</li>
+</ul>
+
+<h3>There are five input actions:</h3>
+<ul>
+<li>Login</li>
+<li> Go to a public page</li>
+<li>Go to a restricted page</li>
+<li>Logout</li>
+<li>Invalid login entry</li>
+</ul>
+<br>
+Combine the two to form twenty scenarios. Test cases you are unlikely to have thought about will manifest, as if by magic, and these have a good chance of exposing bugs. Eg. Go to a restricted page when the user is logged out. 
+<br><br>
+Hopefully a good step to becoming a 'model tester'. 
+
+</body>
+</html>

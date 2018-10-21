@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <a href="../">Home</a><br>
+  <a href="../shorts">Bite Size Blogs</a>
+</head>
+
+<body>
+<h1>'Going to the FLICS' - a simple approach to efficient testing</h1>
+
+For every component (service or front-end) in your architecture, consider applying a FLICS testing approach:
+<br>
+<b>F</b>  =  functional testing with 3rd parties stubbed
+<br>
+<b>L</b>   =  local state testing, component chains in your domain, with 3rd parties stubbed
+<br>
+<b>I</b>   =   integration testing with real 3rd party clients (run a small subset of  functional)
+<br>
+<b>C</b>   =  consumer testing initiated (run a small set of their functional)
+<br>
+<b>S</b>   =  system state testing, component chains across domains, with real third parties (smallest set)
+<br>
+P.S. Performance and Security
+
+</body>
+</html>

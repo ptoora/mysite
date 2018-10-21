@@ -2,11 +2,11 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* The image used */
-  background-image: url("../images/zen.jpeg");
+  background-color: turquoise;
 
   /* Full height */
   height: 100%; 
-  background-repeat: repeat-y;
+  background-repeat: repeat;
   background-attachment: scroll;
 }
 

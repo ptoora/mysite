@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <a href="../">Home</a><br>
+  <a href="../shorts">Bite Size Blogs</a>
+</head>
+
+<body>
+<h1>Automatically Testing Your API Contracts</h1>
+
+API Contracts are a schematic representation of the things that make up an API; end points, payloads, statuses, headers etc.
+They provide a succinct structured document against which consumers build integration software. Swagger (OpenApi) is the standard in this space.
+<br>
+We can extend the traditional approach to testing so that consumers of APIs can test and release their software without having to test against the actual APIs 😳
+<br>
+This approach enables us to release APIs very quickly with the confidence that we have not 
+introduced a backwards compatibility regression. 
+
+<h2>The Contract</h2>
+
+A comprehensive versioned Swagger contract with tight definitions
+
+<h2> API </h2>
+<ul>
+<li>From the APIs perspective, we do this by making a call to a powerful swagger validation library.
+  In our functional/integration tests we pass in various valid and invalid http requests. 
+The tests call out to the validator to assert compliance with swagger. </li>
+<li>Additional assertions validate the behaviour. </li> 
+</ul>
+
+
+That's it! easy and lightweight. A sweet side effect of this is that if the swagger contract itself is invalid,
+ the tests will automatically fail... A win win solution. 
+ 
+<h2>The Consumer</h2>
+ 
+ The quality story goes beyond the API. 
+ <ul>
+   <li>Consumers of our APIs use Wiremock based stubs that, in a similar fashion to the API tests, 
+ validate that both the requests from the consumer and the response from the stub, 
+ honour the swagger contract. </li>
+ <li>Consumers that validate request payload content... important for checking contract content rather than contract structure (can be done in Wiremock admin) 
+ </li>
+ <li> A small set of integration tests</li>
+ </ul>
+
+ 
+ This approach means that both APIs and API consumers are automatically tested against a common contract. 
+ <br>
+ A great step towards Contract Based Testing. 
+</br>
+ -_-
+ </body>
+ </html>
