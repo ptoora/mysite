@@ -20,19 +20,11 @@ a {
 
 
 a.button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  font-size: 150%;
+  border-style: ridge;
   text-decoration: none;
-  color: blue;
+  font-size: 300%;
 }
 
-@media only screen and (max-width: 600px) {
-  a.button {
-    font-size: 300%;
-  }
-}
 
 a:hover { 
   background-color: yellow;
