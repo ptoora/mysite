@@ -15,6 +15,7 @@ git@github.com:ptoora/mysite.git
 ## To deploy to Heroku:
 
 git remote add heroku https://git.heroku.com/testing-strategy.git
+
 git push heroku master
 
 ## To see in Heroku 
