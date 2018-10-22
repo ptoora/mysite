@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h2= title
+
+  ul
+  each val in projects
+    p
+    a(href=val.url) #{val.description}

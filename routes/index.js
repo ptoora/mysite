@@ -26,4 +26,15 @@ router.get('/longs', function(req, res, next) {
 
 });
 
+
+/* */
+router.get('/code', function(req, res, next) {
+ 
+  var codeProjects = [{url: "https://github.com/telegraph/wiremock-swagger",description:"Scala Swaggerised Stub In Docker"},
+                      {url: "https://github.com/culture-trip/swagger-wiremock", description:"Java Swaggerised Stub In Docker"}]
+  res.render('code', { layoutTitle: LAYOUT_TITLE, title: 'Software Projects', projects: codeProjects });
+
+});
+
+
 module.exports = router;
