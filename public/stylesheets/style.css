@@ -18,13 +18,20 @@ a {
   text-decoration: underline;
 }
 
+
 a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-  font-size: 250%;
+  font-size: 150%;
   text-decoration: none;
   color: blue;
+}
+
+@media (max-width: 768px) {
+  a.button {
+    font-size: 300%;
+  }
 }
 
 a:hover { 
