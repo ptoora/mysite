@@ -39,4 +39,17 @@ $(document).ready(
   }
 );
 
+$(document).ready(
+  function(){
+    var floatingBanners = $(".floating-banner");
+    function bannerMoveRight(){
+	    floatingBanners.animate({left:"+=1000"}, 1000 , 'linear', bannerMoveLeft);
+    }
+    function bannerMoveLeft(){
+	    floatingBanners.animate({left:"0"}, 1000, 'linear', bannerMoveRight);
+    }
+    bannerMoveRight();
+  }
+);
+
     
