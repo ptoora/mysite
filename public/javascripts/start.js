@@ -11,6 +11,14 @@ $(document).ready(
 
 $(document).ready(
   function(){
+    $("[class^=openableTitle]").hover(function(){ 
+        $(this).css('background-color','yellow')
+    })
+  }
+);
+
+$(document).ready(
+  function(){
     $(".openableTitle2").click(function(){
       if ($(".openable2").css("display")=="none")
         $(".openable2").show();

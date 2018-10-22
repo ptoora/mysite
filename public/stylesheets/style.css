@@ -27,6 +27,10 @@ a.button {
   color: blue;
 }
 
+a:hover { 
+  background-color: yellow;
+}
+
 .tab {
   text-indent: 100px; 
 }
