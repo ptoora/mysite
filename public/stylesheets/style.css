@@ -22,7 +22,7 @@ a.button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-  font-size: large;
+  font-size: 250%;
   text-decoration: none;
   color: blue;
 }
