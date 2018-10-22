@@ -21,8 +21,8 @@ router.get('/shorts', function(req, res, next) {
 /* */
 router.get('/longs', function(req, res, next) {
  
-  var files = fs.readdirSync('./public/documents/');
-  res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Long Blogs And Documents', shortArticles: files });
+  var files = fs.readdirSync('./public/documents/').map(line => line.trim());
+  res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Long Blogs And Documents', longArticles: files });
 
 });
 
