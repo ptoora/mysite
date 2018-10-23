@@ -15,19 +15,22 @@ h1 {
 }
 
 a {
-  text-decoration: underline;
-}
-
-
-a.button {
-  background-color: #4CAF50; /* Green */
+  background-color: orange;
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 30px;
+}
+    
+a.button {
+    background-color:  burlywood
+}
+
+   
+a.menu {
+  background-color:  green
 }
 
 
