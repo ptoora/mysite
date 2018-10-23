@@ -22,7 +22,7 @@ router.get('/shorts', function(req, res, next) {
 router.get('/longs', function(req, res, next) {
  
   var files = fs.readdirSync('./public/documents/').map(line => line.trim());
-  res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Long Blogs And Documents', longArticles: files });
+  res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Blogs And Documents', longArticles: files });
 
 });
 
@@ -30,7 +30,7 @@ router.get('/longs', function(req, res, next) {
 /* */
 router.get('/strategy', function(req, res, next) {
  
-  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Online Testing Strategy Generator' });
+  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Testing Strategy Generator' });
 
 });
 
