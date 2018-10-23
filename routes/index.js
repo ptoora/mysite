@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-const LAYOUT_TITLE = 'Parsh\'s Testing Strategy Wiki'
+const LAYOUT_TITLE = 'Parsh\'s Testing Wiki'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,7 +30,7 @@ router.get('/longs', function(req, res, next) {
 /* */
 router.get('/strategy', function(req, res, next) {
  
-  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Testing Strategy Generator' });
+  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Testing Strategy Template' });
 
 });
 
