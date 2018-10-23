@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../javascripts/start.js"></script>
+  <a href="../">Home</a><br>
+  <a href="../shorts">Bite Size Blogs</a>
+</head>
+
+<body>
+
+<h2>Happy / sad path</h2>
+Key use cases by Acceptance Criteria
+
+<h2>Known gotchas</h2>
+
+JS turned off on browser, 
+Back button impact, 
+Multi tab browser, 
+Cookie content exposure, 
+Caching issues, 
+Clearing cache manually, 
+Web mobile, 
+Redirection from 3rd party APIs, 
+No default sort order in list, 
+Data migration, 
+Bookmark direct page (eg. ignore login), 
+Options http method, 
+Double click, 
+Fallback and recovery, 
+Model based test - go in wrong order directly, 
+Leading zeroes, blanks, null, html entry, decimal, real number, 
+Very large text, 
+HTML characters in the input
+
+<h2>Boundary analysis</h2>
+
+Check boundary conditions in code and tests
+
+E.g if pass mark is a percentage between 0 and 100, then test with; -1, 0,100, 101, >max number
+
+<h2>Equivalence partitioning</h2>
+Check boundary conditions in code and tests around key values
+
+E.g if pass mark = 75% then test with 74,75,76
+
+<h2>Model based</h2>
+Define a model of your application and infer valid and invalid journey
+
+E.g. Create a logical state machine, and traverse
+
+<h2>Grey box / test the architecture</h2>
+Analyse the architecture and test Integration errors e.g. 3rd party service being down
+
+<h2>Persona</h2>
+Understand the different types of Users and test each one
+
+E.g. content editor, editorial manager, legal
+
+<h2>Third Party - Independent Mindset</h2>
+Get others, with a different mindset, to test,
+
+e.g. ‘bug bash’ with all team, work floor
+
+<h2>Dog food</h2>
+Incoroprate the Dev app in your daily work
+
+E.g. Use Content Creation to write tech docs for the release
+
+<h2>Behavioural</h2>
+Write the tests as customer behaviours 
+
+e.g. ‘if I enter a invalid password then i get a 500 http error’
+
+could be re-written as
+
+‘If i enter an invalid password then i can’t login’
+
+<h2>Probabilistic</h2>
+If definitive results cannot be derived from a single scenario, consider many passes and asserting against a threshold.
+
+E.g. Application should predict your car from your post code. Call the app many times and assert that sufficient correct results were obtained.
+</body>
+</html>

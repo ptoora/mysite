@@ -28,6 +28,14 @@ router.get('/longs', function(req, res, next) {
 
 
 /* */
+router.get('/strategy', function(req, res, next) {
+ 
+  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Online Testing Strategy Generator' });
+
+});
+
+
+/* */
 router.get('/code', function(req, res, next) {
  
   var codeProjects = [{url: "https://github.com/telegraph/wiremock-swagger",description:"Scala Swaggerised Stub In Docker"},
