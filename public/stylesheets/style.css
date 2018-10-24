@@ -18,7 +18,7 @@ h1 {
   font-size: 250%;
 }
 
-a {
+a,.button {
   background-color: gray;
     border: none;
     color: white;
@@ -28,6 +28,7 @@ a {
     display: inline-block;
     font-size: 200%;
 }
+
 
 a.menu {
   background-color:  burlywood;
@@ -40,7 +41,7 @@ a:hover {
 }
 
 .tab {
-  text-indent: 100px; 
+  margin-left: 100px;
 }
 
 .floating-banner{

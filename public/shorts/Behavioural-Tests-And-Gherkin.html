@@ -19,7 +19,7 @@
         <li>estimate'able</li>
         </ul>
 
-        <h3 class="openableTitle1">What is Gherkin format? click to open =></h3>
+        <h3 class="openableTitle1 button">What is Gherkin format?</h3>
         <div class="tab openable1" style="display:none">
         <div>Defining the persona and business imperative for the feature &rarr; <b>FEATURE</b>(As a ... I want to ... so that I can ...)</div>
         <div>Defining the scope and use case &rarr; <b>SCENARIO</b></div>
@@ -33,13 +33,13 @@
         </div>
 
        
-        <h3 class="openableTitle2">What is the difference between behavioural and non-behavioural? click to open =></h3>
+        <h3 class="openableTitle2 button">What is the difference between behavioural and non-behavioural?</h3>
        <div  class="tab openable2" style="display:none">
         <br />
-        <div>e.g. Feature: As a customer I want to be the only person who can access my account so that my information is secure</div>
+        <div><b>e.g. Feature: As a customer I want to be the only person who can access my account so that my information is secure</b></div>
         <br />
-        <div>Scenario: Logging in with an invalid password</div>
-        <div>&nbsp;</div>
+        <div><b>Scenario: Logging in with an invalid password</b></div>
+        <br/>
         <div>Non-behavioural:</div>
         <br />
         <div class="tab">
@@ -57,9 +57,10 @@
         <div>Then I will not be able to access that account</div>
         <div>And I will see an error</div>
       </div>
-        <div>e.g. Feature: As a Content Creator UI I want to be able to add an article to CT so that they can be published to the world</div>
+      <br>
+        <div><b>e.g. Feature: As a Content Creator UI I want to be able to add an article to CT so that they can be published to the world</b></div>
         <br />
-        <div>Scenario: Successfully adding an article via an API</div>
+        <div><b>Scenario: Successfully adding an article via an API</b></div>
         <br />
         <div>Non-behavioural:</div>
         <div class="tab">
@@ -77,24 +78,28 @@
       </div>
 
       <br><br>
-        <div>Benefits of taking the behavioural approach:</div>
-        <ul>
-        <li>It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)</li>
-        <li>The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</li>
-        <li>Is Behaviour always agnostic of the implementation? Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.</li>
-        </ul>
+    
+        <div><b>Benefits of taking the behavioural approach:</b></div>
+        <br />
+        <div>It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)</div>
+        <br />
+        <div>The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</div>
+        <br />
+        <div>Is Behaviour always agnostic of the implementation? Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.</div>
+        <br />
         <div>eg. A check button to chose if you accept cookies, or where the specific http response code is mandated, or where the copy is a legal requirement</div>
-</div>  
-        <h3 class="openableTitle3">Advanced Gherkin - click to open=></h3>
+      </div> 
+   
+        <h3 class="openableTitle3 button">Advanced Gherkin</h3>
         <div  class="tab openable3" style="display:none">
-        <div>Gherkin style offers a great approach to writing; structured, comprehensive, and well scoped acceptance criteria. However the approach has issues:</div>
-        <ul>
-        <li>Conflates the client with the system (domain) state</li>
-        <li>Conflates the action with the data scenario</li>
-        </ul>
+          <div class="tab"></div>
+        Gherkin style offers a great approach to writing; structured, comprehensive, and well scoped acceptance criteria. 
+        <br />
+        <div>However the approach has issues; conflates the client with the system (domain) state, conflates the action with the data scenario</div>
+        <br />
         <div>An extension on this would be to take a more explicit approach as follows:</div>
         <br />
-        <div class="tab">
+       
         <div>GIVEN:</div>
         <div>client state</div>
         <div>system state</div>
@@ -109,7 +114,7 @@
         <div>the system does something useful</div>
         <div>and the client responds nicely</div>
         <br /><br />
-        <div>E.g. An invalid front-end login</div>
+        <div><b>E.g. An invalid front-end login</b></div>
         <div>GIVEN:</div>
       
         <div>I am not logged in</div>
@@ -123,7 +128,7 @@
         <div>The system checks and determines the password is invalid</div>
         <div>And displays 'Doh!' with a 😪</div>
         <br /><br />
-        <div>E.g. an API call</div>
+        <div><b>E.g. an API call</b></div>
         <div>GIVEN:</div>
        
         <div>I have an API key</div>
@@ -143,6 +148,8 @@
         </div>
         </div>
         </div>
+        </div>
+
 
 </body>
 </html>
