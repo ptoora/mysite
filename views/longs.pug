@@ -5,4 +5,4 @@ block content
   ul
   each val in longArticles
     h3
-    a(href='/documents/' + val) #{val}
+    a(href='/documents/' + val) #{val.replace('.docx','').replace('.pptx','')}

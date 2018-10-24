@@ -15,10 +15,14 @@ We can extend the traditional approach to testing so that consumers of APIs can 
 <br>
 This approach enables us to release APIs very quickly with the confidence that we have not 
 introduced a backwards compatibility regression. 
+<br>
+<br>
+Three aspects need covering to support Contract Based Dev/Test; the contract, the API, and the Consumer.
+<br>
 
 <h2>The Contract</h2>
 
-A comprehensive versioned Swagger contract with tight definitions
+A comprehensive versioned Swagger contract with tight definitions e.g. use Enums instead of String
 
 <h2> API </h2>
 <ul>
@@ -28,14 +32,13 @@ The tests call out to the validator to assert compliance with swagger. </li>
 <li>Additional assertions validate the behaviour. </li> 
 </ul>
 
-
 That's it! easy and lightweight. A sweet side effect of this is that if the swagger contract itself is invalid,
  the tests will automatically fail... A win win solution. 
  
 <h2>The Consumer</h2>
  
- The quality story goes beyond the API. 
- <ul>
+ The quality story goes beyond the API...
+  <ul>
    <li>Consumers of our APIs use Wiremock based stubs that, in a similar fashion to the API tests, 
  validate that both the requests from the consumer and the response from the stub, 
  honour the swagger contract. An example of a framework that supports this can be found in: 
@@ -47,9 +50,7 @@ That's it! easy and lightweight. A sweet side effect of this is that if the swag
 
  
  This approach means that both APIs and API consumers are automatically tested against a common contract. 
- <br>
+ <br><br>
  A great step towards Contract Based Testing. 
-</br>
- -_-
  </body>
  </html>

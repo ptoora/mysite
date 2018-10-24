@@ -5,4 +5,4 @@ block content
   ul
   each val in shortArticles
     h3
-    a(href='/shorts/' + val) #{val}
+    a(href='/shorts/' + val) #{val.replace('.html','').replace(/-/g,' ')}
