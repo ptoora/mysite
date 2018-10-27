@@ -43,10 +43,16 @@ $(document).ready(
   function(){
     var floatingBanners = $(".floating-banner");
     function bannerMoveRight(){
-	    floatingBanners.animate({left:"+=1000"}, 1000 , 'linear', bannerMoveLeft);
+	    floatingBanners.animate({left:"+=1000"}, 1000 , 'linear', bannerMoveDown);
+    }
+    function bannerMoveDown(){
+	    floatingBanners.animate({top:"+=1000"}, 1000, 'linear', bannerMoveLeft);
     }
     function bannerMoveLeft(){
-	    floatingBanners.animate({left:"0"}, 1000, 'linear', bannerMoveRight);
+	    floatingBanners.animate({left:"0"}, 1000, 'linear', bannerMoveUp);
+    }
+    function bannerMoveUp(){
+	    floatingBanners.animate({top:"0"}, 1000, 'linear', bannerMoveRight);
     }
     bannerMoveRight();
   }
