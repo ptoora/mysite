@@ -2,57 +2,52 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 const LAYOUT_TITLE = 'Parsh\'s Testing Wiki'
-// var pgp = require('pg-promise')(/*options*/)
-// const db = pgp('')
-// var counter=undefined
+var db = require('../models/db')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-
-  // db.one('SELECT count from counter where id=\'home\'', [true])
-  // .then( data => {
-  //   res.render('index', {  layoutTitle: LAYOUT_TITLE, hitCount: data.json});
-  // })
-  // .catch(function (error) {
-  //   console.log('ERROR:', error)
-  // })
-
-  res.render('index', {  layoutTitle: LAYOUT_TITLE});
-
+  const path = 'home'
+  db.incPageCount(path)
+  var myFunc = count => res.render('index', {  layoutTitle: LAYOUT_TITLE, hitCount: count})
+  const count = db.getPageCount(path, myFunc)
 });
 
 /* */
 router.get('/shorts', function(req, res, next) {
-
+  const path = req.path.replace(/\//g,'') 
+  db.incPageCount(path)
   var files = fs.readdirSync('./public/shorts/');
-  res.render('shorts', { layoutTitle: LAYOUT_TITLE, title: 'Bite Size Blogs', shortArticles: files });
-
+  var myFunc = count => res.render(path, { layoutTitle: LAYOUT_TITLE, title: 'Bite Size Blogs', shortArticles: files, hitCount: count });
+  const count = db.getPageCount(path, myFunc)
 });
 
 /* */
 router.get('/longs', function(req, res, next) {
- 
+  const path = req.path.replace(/\//g,'') 
+  db.incPageCount(path)
   var files = fs.readdirSync('./public/documents/').map(line => line.trim());
-  res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Blogs And Documents', longArticles: files });
-
+  var myFunc = count => res.render('longs', { layoutTitle: LAYOUT_TITLE, title: 'Blogs And Documents', longArticles: files, hitCount: count });
+  const count = db.getPageCount(path, myFunc)
 });
 
 
 /* */
 router.get('/strategy', function(req, res, next) {
- 
-  res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Testing Strategy Template' });
-
+  const path = req.path.replace(/\//g,'') 
+  db.incPageCount(path)
+  var myFunc = count => res.render('strategy', { layoutTitle: LAYOUT_TITLE, title: 'Testing Strategy Template', hitCount: count });
+  const count = db.getPageCount(path, myFunc)
 });
 
 
 /* */
 router.get('/code', function(req, res, next) {
- 
+  const path = req.path.replace(/\//g,'') 
+  db.incPageCount(path)
   var codeProjects = [{url: "https://github.com/telegraph/wiremock-swagger",description:"Scala Swaggerised Stub In Docker"},
                       {url: "https://github.com/culture-trip/swagger-wiremock", description:"Java Swaggerised Stub In Docker"}]
-  res.render('code', { layoutTitle: LAYOUT_TITLE, title: 'Software Projects', projects: codeProjects });
-
+  var myFunc = count => res.render('code', { layoutTitle: LAYOUT_TITLE, title: 'Software Projects', projects: codeProjects, hitCount: count });
+  const count = db.getPageCount(path, myFunc)
 });
 
 
