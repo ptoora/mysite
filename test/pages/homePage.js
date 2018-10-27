@@ -8,6 +8,10 @@ class HomePage {
     getTitle() {
         return this.driver.getTitle()
     }
+
+    getAllLinks() {
+        return this.driver.getLinks()
+    }
 }
 
 module.exports=HomePage

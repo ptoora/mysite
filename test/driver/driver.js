@@ -1,4 +1,6 @@
 
+var client = require('webdriverio');
+
 class Driver {
 
     constructor (inClient) {
@@ -9,6 +11,10 @@ class Driver {
     }
     getTitle() {
         return this.client.getTitle()
+    }
+
+    getLinks() {
+        return this.client.elements('a').value.map(function(elm){elm.getText()})
     }
 }
 module.exports = Driver

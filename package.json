@@ -15,6 +15,7 @@
     "helmet": "^3.14.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
+    "pg-promise": "^8.5.1",
     "pug": "2.0.0-beta11",
     "serve-favicon": "^2.5.0",
     "webdriverio": "^4.14.0"

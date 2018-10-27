@@ -7,15 +7,35 @@
     <script src="../javascripts/start.js"></script> 
 <body>
 
-    <h1>Parsh's Testing Wiki - Definition Of ready</h1>
+    <h1>Parsh's Testing Wiki - Definition Of Ready</h1>
 
-    <h3>The 'Defintion Of Ready' describes the prerequisites for a Story being played. It is as important, if not more, than the Defintion Of Ready.</h2>
-    <h3>Before a story is picked-up for development, the following should be in place:</h2>
+    <h3>The 'Definition Of Ready (DOR)' is more important than the 'Definition Of Done' because it sets the foundation of the SDLC for the Story. It is the product of an Agile Refinement and involves; the Business, the Developer and the QA. Before a Story is ready for having code developed, it should pass the five DOR tests: </h2>
     <ol type="1">
-        <li>a set of comprehesive Acceptance Criteria reviewed by; the QA, the Dev, and the Business</li>
-        <li>a small sized story that is realistically deliverable into Prod by the end of the Sprint</li>
-        <li>consideration given to; performance, security, seo, devops (logging), data analytics, accessibility, and testability</li>
-    </ul>
+        <li>Is there business value? <br>
+            Does it meet a priority business need and is it a step in your MVP.</li>
+        <li>Is it comprehensive? <br>
+            Has it considered most new use-cases and addressed the impact on existing behaviour. Have we specificed the Acceptance Criteria for the APIs in a separate but related Story, and do they expose contracts. Have we given consideration to; performance, security, seo, devops (logging), data analytics, and accessibility. </li>
+        <li>Is it accurate? <br>
+            The Acceptance Criteria should be unambiguous, structured (following Gherkin format), with well defined scope</li>
+        <li>Is is testable via automation? <br>
+            Can we automate easily, do we have good quality test data, and do we have available testing environments </li>
+        <li>Is it achievable <br>
+            Has it been sized and is comfortably deliverable (built and tested) within the sprint/kanban timescales. </li>            
+    </ol>
 
+        <h3>Eg Let's take an example of a Story which requires that only authorised people can access an account.</h3>
+
+        <ol type="1">
+            <li>Is there business value? <br>
+                Our most important use case might be users on our android app, so we might just focus on the Login Story for that, leaving other requirements (eg. Web, online password reset) for later. </li>
+            <li>Is it comprehensive? <br>
+                Perhaps we need to include session expiry in the Story as an important security measure. Perhaps we need to clarify what part of the account the user can see, and describe the error the user gets with an invalid login. Additonal ACs might be needed on the APIs to catch hackers bypassing the UI validation. Also we may want to add performance testing to ensure a good user experience.  </li>
+            <li>Is it accurate? <br>
+                We should describe; the context, the action, the behaviour, and the result of the action in each Acceptance Criteria, using a Gherkin format of 'Given, When, Then'.</li>
+            <li>Is is testable via automation? <br>
+                Are there reliable html attributes, such that UI automation can proceed. Do we have stubs for APIs so we can progress and test independently.</li>
+            <li>Is it Achievable <br>
+                The Story should be no more than five Story points, otherwise consider breaking it down into smaller chunks.</li>        
+            </ol>
 </body>
 </html>
