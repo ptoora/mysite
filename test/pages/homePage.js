@@ -1,16 +1,10 @@
 const Driver = require('../driver/Driver.js');
+AllPages = require('./allPages')
 
-class HomePage {
+class HomePage extends AllPages {
     constructor (inClient) {
-        this.driver = new Driver(inClient)
+        super(inClient)
         this.driver.getUrl("https://testing-strategy.herokuapp.com/")
-    }
-    getTitle() {
-        return this.driver.getTitle()
-    }
-
-    getAllLinks() {
-        return this.driver.getLinks()
     }
 }
 

@@ -162,6 +162,11 @@ exports.config = {
      */
     // before: function (capabilities, specs) {
     // },
+    before: function() {
+        var chai = require('chai');
+        global.expect = chai.expect;
+        chai.Should();
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name

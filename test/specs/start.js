@@ -12,7 +12,7 @@ describe('Home page should exist', function() {
 describe('Home page should have expected links', function() {
     it('should have five links', function () {
         var homePage = new HomePage(browser);
-        var title = homePage.getAllLinks();
-        console.log(title)
+        const expectedList=['Home', 'Contact', 'Bite Size Blogs', 'Blogs And Docs', 'Software Projects', 'Test Strategy Template']
+        homePage.getLinkTexts((linksText) =>  assert.deepEqual(expectedList, linksText))
     });
 });

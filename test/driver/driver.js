@@ -13,8 +13,11 @@ class Driver {
         return this.client.getTitle()
     }
 
-    getLinks() {
-        return this.client.elements('a').value.map(function(elm){elm.getText()})
+    getLinkTexts(callback) {
+        let list = this.client.elements('a').value
+        let returnList = []
+        list.forEach (item =>returnList.push(item.element().getText()))
+        callback(returnList)
     }
 }
 module.exports = Driver
