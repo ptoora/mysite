@@ -14,12 +14,12 @@ html
       h1= layoutTitle
     else
       h1= layoutTitle + ' - ' + title
-    a(class='menu' href='/') Home
+    a(class='menu home' href='/') Home
     d &nbsp;
     a(class='menu' href='http://www.linkedin.com/in/parshotam-t-7bab76129') Contact
     h3
 
     block content
 
-  h3(style='text-align:right;font-size:x-small') page views: #{hitCount}
+  h3(id='footer' style='text-align:right;font-size:x-small') page views: #{hitCount}
     

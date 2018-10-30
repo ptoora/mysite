@@ -3,6 +3,7 @@ const Driver = require('../driver/Driver.js');
 class AllPages {
 
     constructor (inClient) {
+        this.client = inClient
         this.driver = new Driver(inClient)
     }
 
@@ -10,8 +11,17 @@ class AllPages {
         return this.driver.getTitle()
     }
 
-    getLinkTexts(callback) {
-        return this.driver.getLinkTexts(callback)
+    getLinkTexts() {
+        return this.driver.getLinkTexts()
+    }
+
+    getFooter() {
+        return this.driver.getText("#footer")
+    }
+
+
+    getHeading() {
+        return this.driver.getHeading()
     }
 }
 
