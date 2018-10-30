@@ -45,19 +45,19 @@
         <div>Non-behavioural:</div>
         <br />
         <div class="tab">
-        <div >Given I have the login page</div>
-        <div>When I enter a valid username into the username box</div>
-        <div>And I enter an invalid password into the password box</div>
-        <div>And I click the login button</div>
-        <div>Then I will see the error message 'Invalid password'</div>
+        <div><b>Given</b> I have the login page</div>
+        <div><b>When</b> I enter a valid username into the username box</div>
+        <div><b>And</b> I enter an invalid password into the password box</div>
+        <div><b>And</b> I click the login button</div>
+        <div><b>Then</b> I will see the error message 'Invalid password'</div>
         </div>
         <br />
         <div>Behavioural:</div>
         <div class="tab">
-        <div>Given I want to login to another's account</div>
-        <div>When I login in with an valid username and invalid password</div>
-        <div>Then I will not be able to access that account</div>
-        <div>And I will see an error</div>
+        <div><b>Given</b> I want to login to another's account</div>
+        <div><b>When</b> I login in with an valid username and invalid password</div>
+        <div><b>Then</b> I will not be able to access that account</div>
+        <div><b>And</b> I will see an error</div>
       </div>
       <br>
         <div><b>e.g. Feature: As a Content Creator UI I want to be able to add an article to CT so that they can be published to the world</b></div>
@@ -66,17 +66,17 @@
         <br />
         <div>Non-behavioural:</div>
         <div class="tab">
-        <div>Given I have an article payload</div>
-        <div>When I call the POST method on the URL for adding articles with headers</div>
-        <div>Then I get a 201 response</div>
+        <div><b>Given</b> I have an article payload</div>
+        <div><b>When</b> I call the POST method on the URL for adding articles with headers</div>
+        <div><b>Then</b> I get a 201 response</div>
       </div>
         <div>Behavioural:</div>
         <div class="tab">
-        <div>Given I have drafted an article</div>
-        <div>When I call the API to add the article</div>
-        <div>And I call the API to get the article</div>
-        <div>Then it will be returned as it was entered</div>
-        <div>And consumers are informed via the response code of a successful addition (201,200)</div>
+        <div><b>Given</b> I have drafted an article</div>
+        <div><b>When</b> I call the API to add the article</div>
+        <div><b>And</b> I call the API to get the article</div>
+        <div><b>Then</b> it will be returned as it was entered</div>
+        <div><b>And</b> consumers are informed via the response code of a successful addition (201,200)</div>
       </div>
 
       <br><br>
@@ -85,7 +85,7 @@
         <br />
         <div>It avoids incorrect tests, the non-behavioural approach above does not actually meet the business requirement, it just test the UI display or http response code. In the behavioural approach the test(er) may be minded to try more thorough approaches to check the customer is not logged in (such as trying to access a prohibited page) or check the article is added (such as retrieving it)</div>
         <br />
-        <div>The behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</div>
+        <div>The non-behavioural approach is very much tied to the UI or API implementation, which may be subject to change, and so this approach is costly from the point of test software maintenance.</div>
         <br />
         <div>Is Behaviour always agnostic of the implementation? Where there is significant business value in the particular implementation, then this can be explicitly reflected in the Gherkin.</div>
         <br />
@@ -103,48 +103,47 @@
         <br />
        
         <div>GIVEN:</div>
-        <div>client state</div>
-        <div>system state</div>
+        <div>&nbsp;&nbsp;&nbsp;client state</div>
+        <div>&nbsp;&nbsp;&nbsp;system state</div>
         <br>
         <div>WHEN:</div>
-  
-        <div>client performs an action</div>
-        <div>with an input data case</div>
+        <div>&nbsp;&nbsp;&nbsp;client performs an action</div>
+        <div>&nbsp;&nbsp;&nbsp;with an input data case</div>
         <br />
         <div>THEN:</div>
-    
-        <div>the system does something useful</div>
-        <div>and the client responds nicely</div>
+        <div>&nbsp;&nbsp;&nbsp;the system does something useful</div>
+        <div>&nbsp;&nbsp;&nbsp;and the client responds nicely</div>
         <br /><br />
         <div><b>E.g. An invalid front-end login</b></div>
+        <br>
         <div>GIVEN:</div>
-      
-        <div>I am not logged in</div>
-        <div>And there is an account</div>
+        <div>&nbsp;&nbsp;&nbsp;I am not logged in</div>
+        <div>&nbsp;&nbsp;&nbsp;And there is an account</div>
+        <br>
         <div>WHEN:</div>
-        <br />
-        <div>I click login</div>
-        <div>With an invalid password</div>
+        <div>&nbsp;&nbsp;&nbsp;I click login</div>
+        <div>&nbsp;&nbsp;&nbsp;With an invalid password</div>
+        <br>
         <div>THEN:</div>
       
-        <div>The system checks and determines the password is invalid</div>
-        <div>And displays 'Doh!' with a 😪</div>
+        <div>&nbsp;&nbsp;&nbsp;The system checks and determines the password is invalid</div>
+        <div>&nbsp;&nbsp;&nbsp;And displays 'Doh!' with a 😪</div>
         <br /><br />
         <div><b>E.g. an API call</b></div>
+        <br>
         <div>GIVEN:</div>
-       
-        <div>I have an API key</div>
-        <div>And no account exists</div>
+        <div>&nbsp;&nbsp;&nbsp; have an API key</div>
+        <div>&nbsp;&nbsp;&nbsp;And no account exists</div>
         <br />
         <div>WHEN:</div>
     
-        <div>I call the POST method</div>
-        <div>With a valid account</div>
+        <div>&nbsp;&nbsp;&nbsp;I call the POST method</div>
+        <div>&nbsp;&nbsp;&nbsp;With a valid account</div>
         <br />
         <div>THEN:</div>
        
-        <div>The system checks if the account exists, and if not, saves it with a unique ID</div>
-        <div>And returns a 201 status with a resource ID and a 😊 body</div>
+        <div>&nbsp;&nbsp;&nbsp;The system checks if the account exists, and if not, saves it with a unique ID</div>
+        <div>&nbsp;&nbsp;&nbsp;And returns a 201 status with a resource ID and a 😊 body</div>
         <br>
         <div>This approach offers; more clarity, makes it easier to express in Gherkin, and generates more scenarios.</div>
         </div>

@@ -12,7 +12,8 @@ $(document).ready(
 $(document).ready(
   function(){
     $("[class^=openableTitle]").hover(function(){ 
-        $(this).css('background-color','yellow')
+        $(this).css('background-color','yellow');
+        $(this).css('color','black')
     })
   }
 );
@@ -38,24 +39,3 @@ $(document).ready(
     })
   }
 );
-
-$(document).ready(
-  function(){
-    var floatingBanners = $(".floating-banner");
-    function bannerMoveRight(){
-	    floatingBanners.animate({left:"+=1000"}, 1000 , 'linear', bannerMoveDown);
-    }
-    function bannerMoveDown(){
-	    floatingBanners.animate({top:"+=1000"}, 1000, 'linear', bannerMoveLeft);
-    }
-    function bannerMoveLeft(){
-	    floatingBanners.animate({left:"0"}, 1000, 'linear', bannerMoveUp);
-    }
-    function bannerMoveUp(){
-	    floatingBanners.animate({top:"0"}, 1000, 'linear', bannerMoveRight);
-    }
-    bannerMoveRight();
-  }
-);
-
-    
