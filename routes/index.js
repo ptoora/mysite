@@ -41,6 +41,15 @@ router.get('/strategy', function(req, res, next) {
 
 
 /* */
+router.get('/backlog', function(req, res, next) {
+  const path = req.path.replace(/\//g,'') 
+  db.incPageCount(path)
+  var myFunc = (count) => res.render('backlog', { layoutTitle: LAYOUT_TITLE, title: 'Trello Backlog', hitCount: count });
+  db.getPageCount(path, myFunc)
+});
+
+
+/* */
 router.get('/code', function(req, res, next) {
   const path = req.path.replace(/\//g,'') 
   db.incPageCount(path)

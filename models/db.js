@@ -8,7 +8,18 @@ exports.getPageCount = function(pageName, callback) {
     callback(data['count']);
   })
   .catch(function (error) {
-    console.log('ERROR:', error)
+      if (error.message ='No data returned from the query.') {
+        console.log('Adding a new row for:',pageName)
+        db.none('INSERT INTO counter(id, count) VALUES($1, $2)', [pageName, 0])
+      .then(data => {
+        callback(0);
+      })
+      .catch(error => {
+         console.log('ERROR:', error); // print error;
+      });
+      } else {
+        console.log('ERROR:', error)
+      }
   })
 }
 

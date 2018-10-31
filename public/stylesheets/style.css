@@ -44,9 +44,3 @@ a:hover {
 .tab {
   margin-left: 100px;
 }
-
-.floating-banner{
-  position:absolute;
-  top:20px;
-  left:20px;
-}
