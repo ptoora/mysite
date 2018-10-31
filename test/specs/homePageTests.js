@@ -10,12 +10,12 @@ describe('Home page should exist with expected links and footer', function() {
     it('should have the right title', function () {
         assert.equal(homePage.getTitle(), 'Parsh\'s Testing Wiki');
     });
-    it('should have six links', function () {
-        const expectedList=['Home', 'Contact', 'Bite Size Blogs', 'Blogs And Docs', 'Software Projects', 'Test Strategy Template']
+    it('should have expected links', function () {
+        const expectedList=['Home', 'Contact', 'Bite Size Blogs', 'Blogs And Docs', 'Software Projects', 'Test Strategy Template', 'Trello Backlog For Web Site']
         var actualList =  homePage.getLinkTexts()
         chai.expect(expectedList).to.eql(actualList)
     });
     it('should have footer', function () {
-        chai.expect(homePage.getFooter()).to.match(/page views: \d/)
+        chai.expect(homePage.getFooter()).to.match(/Page Views: \d/)
     });
 });
