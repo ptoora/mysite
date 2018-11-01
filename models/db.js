@@ -12,6 +12,7 @@ exports.getPageCount = function(pageName, callback) {
         console.log('Adding a new row for:',pageName)
         db.none('INSERT INTO counter(id, count) VALUES($1, $2)', [pageName, 0])
       .then(data => {
+        console.log('Added',pageName)
         callback(0);
       })
       .catch(error => {
