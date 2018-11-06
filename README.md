@@ -30,4 +30,6 @@ download chromedriver and geckodriver
 
 download selenium server
 
+install junit reporter
+
 npm test

@@ -130,6 +130,14 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd'
     },
+
+    // ...
+    reporters: ['spec', 'junit'],
+    reporterOptions: {
+        junit: {
+            outputDir: './reports/'
+        }
+    },
     //
     // =====
     // Hooks
