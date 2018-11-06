@@ -21,3 +21,13 @@ git push heroku master
 ## To see in Heroku 
 
 https://testing-strategy.herokuapp.com/
+
+## To test
+
+download webdriverio  npm install webdriverio --save-dev
+
+download chromedriver and geckodriver
+
+download selenium server
+
+npm test

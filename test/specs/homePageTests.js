@@ -11,7 +11,7 @@ describe('Home page should exist with expected links and footer', function() {
         assert.equal(homePage.getTitle(), 'Parsh\'s Testing Wiki');
     });
     it('should have expected links', function () {
-        const expectedList=['Home', 'Contact', 'Bite Size Blogs', 'Blogs And Docs', 'Software Projects', 'Test Strategy Template', 'Trello Backlog For Web Site']
+        const expectedList=['Home', 'Contact', 'Bite Size Blogs', 'Blogs And Docs', 'Software Projects', 'Test Strategy Template', 'Trello Backlog For This Website']
         var actualList =  homePage.getLinkTexts()
         chai.expect(expectedList).to.eql(actualList)
     });
