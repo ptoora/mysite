@@ -13,19 +13,60 @@
 
 Quality is about; defects, timeliness, and cost effectiveness</p>
 
-<ul>
+<h2>Headline Metrics</h2>
 
+    <table style="width:100%">
+        <tr>
+            <th>Metric</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Count of bugs that reached Production</td>
+            <td>Measure the quality of exploratory testing and coverage of regression tests</td>
+            <td>May need to review the time alloted to exploraory testing, and review the techniques employed, and the test coverage</td>
+        </tr>
+        <tr>
+            <td>Count of bugs that reached exploratry testing</td>
+            <td>Measure of the quality of the acceptance criteria and their coverage in the automated tests.</td>
+            <td>May need to improve Story refinement and/or the test automation review process</td>
+        </tr>
+        <tr>
+            <td>Cycle Time - time from story pick-up to story ready-for-release</td>
+            <td>Measure of the efficiency and timeliness of the process</td>
+            <td>May need to improve processes and increase automation</td>
+        </tr>
+        <tr>
+            <td>Time To Recovery - time needed to fallback</td>
+            <td>Measure of the ability to recover in a timely fashion</td>
+            <td>May need to improve processes and increase automation</td>
+        </tr>
+    </table>
 
-<li><b>Urgent bugs escaping into production </b> Review => Root cause analysis meetings (PM, Dev, QA)</li>
-<li><b>Non urgent bugs escaping into production </b> Review =>  QA to track and decide best forum </li>
-<li><b>Bugs escaping into exploratory testing</b> Review => QA to track and decide best forum</li>
-<li><b>CI run time from CI code checkout to completion of automated tests.	</b>  Review => 	Aim to fail build if practical and a raise story to fix and relax the limit temporarily</li>
-<li><b>Code coverage - unit (code robustness)	</b>  Review => Fail the build (particularly for new code)</li>
-<li><b>Code coverage - functional test (sufficient automation)	</b> Review => Fail the build (particularly for new code)</li>
-<li><b>Cycle time from story played to story ready for prod Jira</b> </li>
-<li><b>Time to recovery  </b> Review => fallback Testing	</li>
-</ul>
+<h2>Engineering Metrics</h2>
 
+    <table style="width:100%">
+        <tr>
+            <th>Metric</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Code coverage in Unit tests</td>
+            <td>Confidence that that the app is robust</td>
+            <td>May need to increase coverage and enforce in the build</td>
+        </tr>
+        <tr>
+            <td>Code coverage in Acceptance tests</td>
+            <td>Confidence that we have sufficient Acceptance coverage</td>
+            <td>May need to increase coverage and enforce in the build</td>
+        </tr>
+        <tr>
+            <td>Continuouse Integration build and test time</td>
+            <td>Support fail fast and is the lifeblood of an Agile way of working</td>
+            <td>May need to invest in speeding up the process through parallelisation, stubbing etc</td>
+        </tr>
+    </table>
 
 
 </body>
